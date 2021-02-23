@@ -134,6 +134,10 @@ body {
           align-items: center;
 }
 
+.darkmode #sondage .sondage span {
+  color: rgba(174, 212, 247, 0.6);
+}
+
 .is-recherche {
   background: #175996;
   color: whitesmoke;
@@ -482,10 +486,6 @@ body {
 .darkmode #main a {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 400 !important;
-}
-
-.darkmode #main .box-sondage span {
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .darkmode #main .box {

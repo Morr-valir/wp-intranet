@@ -87,7 +87,6 @@
               <?php the_title(); ?>
               </box-sondage>
                <?php endwhile; wp_reset_postdata();?>
-
             </div>
           </div>
         </section>
