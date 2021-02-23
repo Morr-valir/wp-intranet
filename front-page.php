@@ -91,5 +91,26 @@
             </div>
           </div>
         </section>
+        <!--ZONE DE TEST-->
+        <!-- <section class="block">
+          <div class="container">
+                <span class="title is-4">Zone de test</span>
+                <hr>
+                <div class="columns is-multiline">
+                <div class="column is-6" v-for="article in Posts">
+                <article-post
+                :titre='article.title'
+                :auteur='article.author.node.name'
+                :lien='article.link'
+                :date='article.date'
+                :avatar='article.author.node.avatar.url'
+                :type='article.tag_info.niveauDimportance' 
+                :pic='article.tag_info.niveauDimportance'
+
+                 />
+                </div>
+                </div>
+          </div>
+        </section> -->
       </main>
 <?php get_footer(); ?>

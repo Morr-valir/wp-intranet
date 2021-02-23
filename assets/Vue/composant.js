@@ -123,6 +123,39 @@ const AppVue = new Vue({
     return {
       appli: false,
       affiche: true,
+      Posts:[],
     }
+  },
+  mounted() {
+    axios({
+      url: 'http://localhost:8080/wordpress/graphql',
+      method: 'post',
+      data: {
+        query: `
+        query MyQuery {
+          posts(first: 4) {
+              nodes {
+                author {
+                  node {
+                    name
+                    avatar {
+                      url
+                    }
+                  }
+                }
+                date
+                title
+                tag_info {
+                  niveauDimportance
+                }
+                link
+              }
+            }
+          }
+        
+          `
+      }
+    }).then(response => (this.Posts = response.data.data.posts.nodes))
+
   },
 })
