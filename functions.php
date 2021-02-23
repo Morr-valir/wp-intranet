@@ -4,7 +4,7 @@ add_theme_support( 'post-thumbnails' );
 
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
-
+//Ajouter des script et styles pour le site
 //Widget Zone de recherche
 add_action( 'widgets_init', 'nouvelle_zone_widgets_init' );
 function nouvelle_zone_widgets_init() {
@@ -46,7 +46,7 @@ register_nav_menus( array(
 	'main' => 'Menu Principal',
 	'footer' => 'Bas de page',
 ) );
-
+//Couleur de personnalisation custom sur le panel 
 function msk_custom_admin_color_palette() {
     wp_admin_css_color(
       'msk-colors',
