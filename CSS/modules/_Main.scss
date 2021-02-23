@@ -1,0 +1,27 @@
+//Contenu du site
+#main{
+    hr{background: #e4e4e4;}
+    .title{color: $Couleurprincipal;}
+    .block{margin-bottom: 100px;}
+}
+@media screen and (max-width: 768px){
+}
+
+///DarkMode---------------
+.darkmode{
+    #main{
+        .title{color: rgba($Couleurprincipal, $alpha: 0.87);font-weight: 400;}
+        article{
+            background-color:#212121;
+            transition: .5s ease;
+            h2{color: rgba($DarkTitleFlux , $alpha: 0.6);}
+            strong{font-weight: 500;}
+            .info-article{color: rgba($color: white, $alpha: 0.6);transition: .5s;}
+        }
+        a{color: rgba($color: white, $alpha: 0.8);font-weight: 400 !important;}
+        .box-sondage{
+            span{color: rgba($color: white, $alpha: 0.6);}
+        }
+        .box{background:#212121;}
+    }
+}

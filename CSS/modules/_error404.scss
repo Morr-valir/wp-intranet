@@ -1,0 +1,16 @@
+.error404 {
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        height: 100vh;
+        .Page-404{
+            .logo-mairie{
+                @include Logo();
+            }
+        }
+
+    }
+}

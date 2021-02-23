@@ -1,0 +1,22 @@
+#Actu{
+    .filtre{
+        display: inline-flex;
+        flex-flow: wrap;
+        li{
+            padding: 10px;
+            font-weight: 500;
+        }
+    }
+    article{
+        header{
+            display: flex;
+            flex-flow: wrap row;
+
+        }
+        .alert{font-size: 1em;}
+        main{
+            .subtile{color: $Couleurprincipal;font-weight: 600;}
+            display: inline-grid;
+        }
+    }
+}

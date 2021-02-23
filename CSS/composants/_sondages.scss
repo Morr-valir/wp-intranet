@@ -1,0 +1,28 @@
+#sondage{
+    .filtre{
+        display: inline-flex;
+        li{
+            padding: 10px;
+            font-weight: 500;
+        }
+
+    }
+    .sondage{
+        flex-flow: wrap column;
+        .box-sondage{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            a[data-resultat="true"]{color: green;}
+            span{
+                color: #3273dc;
+                font-weight: 600;
+                i{font-size: 1.5em;margin-right: 15px;}
+                a{
+                    display: inline-flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

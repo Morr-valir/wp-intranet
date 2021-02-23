@@ -1,0 +1,252 @@
+@import './config';
+@import './Mixins/logo/logo';
+@import './composants/0Composants';
+@import './modules/Importmodules';
+
+//-----------------------
+//Menu principale
+#header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    .login{
+        display:flex;
+        justify-content: flex-end;
+        a{padding: 10px;}
+        .login-link{
+            display: inline-flex;
+            align-items: center;
+            i{font-size: 2em;}
+        }
+    }
+    .logo{
+        display:flex;
+        flex-flow: column;
+        justify-content: center;
+        div{text-align: center;margin-bottom: 15px;}
+        .has-addons{justify-content: center;}
+    }
+    .navbar{
+        min-height: 3.25rem;
+        position: relative;
+        z-index: 30;
+        box-shadow: 1px 2px 3px #adadad;
+        width: 100%;
+        img{width: 25%;}
+        .navbar-menu{
+            flex-flow:row wrap;
+            justify-content: center;
+        }
+        ul{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            li{
+                a{
+                    display: block;
+                    color:$colorbtnnav;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    text-align: center;
+                    :hover{color: whitesmoke !important;}
+                }
+                :hover{background:$Couleurprincipal !important;}
+    
+            }
+        }
+        .alerte{background: indianred;color: whitesmoke;}
+    }
+}
+
+//Moteur de recherche
+#moteur{
+    .search{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        .logo-mairie{
+            @include Logo();
+        }
+        h2{
+            font-weight: 600;
+            line-height: 1.125;
+            font-size: 1.5em;
+            color:$Couleurprincipal;
+            margin-bottom: 1em;
+        }
+        li{list-style: none;}
+    #sidebar-recherche{
+        span{display: block;margin-bottom: 15px;}
+        div{
+            display: flex;
+            flex-flow: row;
+            label{display: none;}
+            #searchsubmit{
+                background: #175996;
+                border-radius: 0 5px 5px 0;
+                color: whitesmoke;
+                font-weight: 600;
+                border-color: transparent;
+                padding: 9px;
+            }
+        }
+    }
+    }
+}
+//Liste des applications
+#application{
+    .container{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        .appM{
+            display: flex;
+            flex-flow: row wrap;
+            width: 500px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .app{padding: 1em;font-size: 1.5em;text-align: center;}
+            span{width: 100%;}
+        }
+    }
+
+}
+//Page Prevention
+.page-template-page-prevention{
+    .page-prevention{text-align: center;}
+    #service-prevention{
+        blockquote{margin-bottom: 15px;}
+        figure{
+            padding: 20px;
+            img{border-radius: 5px;}
+        }
+    }
+    #partenaire-prevention{
+        .partenaire{margin-top: 20px;padding: 15px;}
+        details{
+            margin: 5px;
+            color: white;
+            summary{background-color: #3273dc; padding: 10px;border-radius: 5px 5px 0 0;}
+            div{background:#5789da; padding: 10px;}
+        }
+    }
+}
+//FORMULAIRE
+#formulaire{
+    .box{
+        span{color: $couelurbtn;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 15px;}
+    }
+}
+.item-centre{
+    justify-content: center;
+}
+.column-flex{
+    display: flex !important;
+    flex-wrap: wrap;
+}
+.message-padding{padding: 20px;}
+.flex-radio{
+    display: flex;
+    flex-direction: column;
+    .radio+.radio{margin: 0;}
+      label{margin: 0;}
+  }
+  .flex-form{flex-wrap: wrap;}
+  .checkbox-form{display: inherit !important;}
+  fieldset[data-id='0']{display: none;}
+  .details-margin{margin: 0 !important;}
+  details{
+    fieldset{padding-top: 30px;}
+  }
+//-----------------Version Tab et mobile-----------//
+@media screen and (max-width: 768px){
+    //-----------------------
+//Menu principale
+#header{
+    .login{
+        display:flex;
+        justify-content: center;
+        a{padding: 10px;}
+        .login-link{
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+    .logo{
+        display:flex;
+        flex-flow: column;
+        justify-content: center;
+        div{text-align: center;margin-bottom: 15px;}
+        .has-addons{justify-content: center;}
+    }
+    .navbar{
+        min-height: 3.25rem;
+        position: relative;
+        z-index: 30;
+        background:whitesmoke;
+        box-shadow: 1px 2px 3px #adadad;
+        .navbar-menu{justify-content: center;background: whitesmoke;}
+        ul{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            li{
+                a{
+                    display: block;
+                    color: $colorbtnnav;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+                :hover{background:$Couleurprincipal !important;}
+    
+            }
+        }
+    }
+}
+//Contenu du site
+#main{
+    background: whitesmoke;
+    hr{background: #e4e4e4;}
+    .title{color: $Couleurprincipal;}
+    .block{margin-bottom: 100px;}
+}
+//Moteur de recherche
+#moteur{
+    .search{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        span{display: block;margin-right: 15px;text-align: center;}
+        .is-4{font-size:1em;}
+    }
+}
+}
+//ANIMATION
+/* Les animations d'entrée (« enter ») et de sortie (« leave »)  */
+/* peuvent utiliser différentes fonctions de durée et de temps.  */
+.slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }

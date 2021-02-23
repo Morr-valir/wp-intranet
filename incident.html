@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Déclaration d'incident</title>
+        <link rel="stylesheet" href="./CSS/bulma.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./CSS/style.css">
+    </head>
+    <body>
+      <div id="app">
+      <!--Haut de page-->
+      <header id="header" role="heading">
+        <!--Navigation-->
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+              <a class="navbar-item" href="index.html">
+                  <tag-btn type="fas fa-home"></tag-btn>
+                </a>
+            <menu-screen></menu-screen>
+          </div>       
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <ul>
+                <li><a  href="index.html">Accueil</a></li>
+                <li><a href="#">Service RH</a></li>
+                <li><a href="#">Service Informatique</a></li>
+                <li><a href="#">DGA</a></li>
+                <li><a href="#">Dialogue social</a></li>
+                <li><a href="#">Vos application</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end login">
+              <a class="login-link" href="formulaire.html">Mes déclarations</a>
+              <a class="login-link" href="">
+                <tag-btn type="fas fa-user-circle"></tag-btn>
+              </a>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <!--Contenu-->
+      <main id="main" class="section container is-fluid">
+          <div class="container">
+            <h1 class="title is-3 has-text-centered	">Déclaration d'incident</h1>
+            <!--FORMULAIRE BULMA-->
+            <form id="form" class="block">
+              <!--INFORMATION DU UTILISATEUR-->
+              <fieldset class="columns flex-form">
+                <div class="column is-5">
+                  <div class="field">
+                    <legend for="acci" class="label">Type d'incident</legend>
+                    <div class="select">
+                      <select id="acci">
+                        <option>Selectionnez un incident</option>
+                        <option>DE SERVICE</option>
+                        <option>DE TRAJET</option>
+                        <option>DE TRAJET - CADRE DE SERVICE</option>
+                        <option>MALADIE PRO</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-5">
+                  <div class="field">
+                    <legend for="eta" class="label">Etablissement</legend>
+                    <div class="select">
+                      <select id="eta">
+                        <option>Selectionnez un établissement</option>
+                        <option>COMMUNE</option>
+                        <option>CCAS</option>
+                        <option>CDE</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-12">
+                  <div class="field">
+                    <legend class="label">Référence N°</legend>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="NAT056567">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <!--INFORMATION VICTIME-->
+              <details class="message is-link message-padding">
+                  <summary class="title is-5 details-margin">Identité de la victime</summary>
+                  <fieldset class="columns flex-form">
+                    <div class="column is-6">
+                      <div class="field">
+                        <legend class="label">Nom - Prénom</legend>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="Jean">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-6">
+                      <div class="field">
+                        <legend for="sexe" class="label">Sexe</legend>
+                        <div class="select">
+                          <select id="sexe">
+                            <option>Homme</option>
+                            <option>Femme</option>
+    
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-12">
+                      <div class="field">
+                        <legend class="label">Adresse</legend>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="56 chemin de la poste">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-4">
+                      <div class="field">
+                        <legend class="label">Numéro de sécurité sociale</legend>
+                        <div class="control">
+                          <input class="input" type="number" placeholder="17 971 732">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-4">
+                      <div class="field">
+                        <legend class="label">Fonction</legend>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="Agent de terrain">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-4">
+                      <div class="field">
+                        <legend class="label">Service</legend>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="Urbanisme">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-6">
+                      <div class="field">
+                        <legend class="label">Ancienneté dans le poste :</legend>
+                        <div class="control flex-radio">
+                          <label class="radio">
+                            <input type="radio" name="answer">
+                            Titulaire / Stagiaire
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="answer">
+                            Non titulaire ( CDD, CDI, Intégré)
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="answer">
+                            Contractuel de droit privé (Emploi d'avenir, CUI, Apprenti)
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+              </details>
+              <!--INFORMATION ACCIDENT-->
+              <details class="message is-danger message-padding">
+                  <summary class="title is-5 details-margin">Information de l'accident</summary>
+                  <fieldset class="columns flex-form">
+                    <div class="column is-6">
+                      <div class="field">
+                        <legend class="label">Date de l'accident</legend>
+                        <div class="control">
+                          <input class="input" type="date">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-6">
+                      <div class="field">
+                        <legend class="label">Heure de l'accident</legend>
+                        <div class="control">
+                          <input class="input" type="time">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-12">
+                      <div class="field">
+                        <legend class="label">Lieu de l'accident</legend>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="56 chemin de la poste">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-12">
+                      <div class="field">
+                        <legend class="label">Circonstances de l'accident</legend>
+                        <div class="control">
+                          <textarea class="textarea"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-12">
+                      <legend class="label">L'agent travaillait-il seul ?</legend>
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Oui
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Non
+                        </label>
+                      </div>
+                    </div>
+                    <div class="column is-12">
+                      <div class="field">
+                        <legend class="label">Au moment de l'accident (fait accidentel)</legend>
+                        <div class="control">
+                          <textarea class="textarea"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-5">
+                      <legend class="label">La tâche effectuée au moment de l'accident est-elle</legend>
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Habituelle
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Nouvelle
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Occasionnelle
+                        </label>
+                      </div>
+                    </div>
+                    <div class="column is-5">
+                      <legend class="label">L'agent était-il formé à la tâche ?</legend>
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Oui
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="answer">
+                          Non
+                        </label>
+                      </div>
+                    </div>
+                </fieldset>
+              </details>
+              <!--INFORMATION TEMOINS-->
+              <details class="message is-success message-padding">
+                <summary class="title is-5 details-margin">Information témoins</summary>
+                <fieldset class="columns flex-form">
+                  <div class="column is-5">
+                    <legend class="label">Y a t-il eu(des) témoins(s) ?</legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Oui
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column is-7">
+                    <legend class="label">Joindre le(les) déclaration(s) daté(s) et signé(s)</legend>
+                    <div class="file has-name">
+                      <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                          <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                          </span>
+                          <span class="file-label">
+                            Choisier un fichier…
+                          </span>
+                        </span>
+                        <span class="file-name">
+                          Témoin_01.png
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Nom - Prénom</legend>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Jean-Payet;Patrik-JP">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Fonction</legend>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Agent RH">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </details>
+              <!--INFORMATION TIERS-->
+              <details class="message is-success message-padding">
+                <summary class="title is-5 details-margin">Information Tiers</summary>
+                <fieldset class="columns flex-form">
+                  <div class="column is-12">
+                    <legend class="label">L'accident a t-il été causé par un tiers ?</legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Oui
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Nom - Prénom</legend>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Jean-Payet;Patrik-JP">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Fonction</legend>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Agent RH">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </details>
+              <!--NATURE DES LESIONS-->
+              <details class="message is-danger message-padding">
+                <summary id='MAP' class="title is-5 details-margin">Informations corporelle</summary>
+                <fieldset class="columns">
+                  <div class="column is-12 column-flex">
+                    <legend class="label">Nature des lésions</legend>
+                    <fieldset class="column is-4">
+                      <label class=" checkbox-form checkbox">
+                        <input type="checkbox">
+                        Contusion, hématome
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Atteinte musculaire (déchirure,etc.)
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Atteinte ostéo-articulaire (entorse, luxatuin, etc.)
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Réaction allergique ou inflammatoire cutannée ou muqeuse
+                        (éruption de boutons, de plaques...)
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Fracture
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Lésions internes
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Lésions nerveuses
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Atteinte sensorielles ( troubles de la vue,
+                         trouble auditif..)
+                      </label>
+                    </fieldset>
+                    <fieldset class="column is-4">
+                      <label class=" checkbox-form checkbox">
+                        <input type="checkbox">
+                        Maux de dos (lumbago, etc.)
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Hernie
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Présence de corps étrangers
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Réaction allergique ou inflammatoire cutannée ou muqeuse
+                        (éruption de boutons, de plaques...)
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Fracture
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Lésions internes
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Lésions nerveuses
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Atteinte sensorielles ( troubles de la vue,
+                         trouble auditif..)
+                      </label>
+                    </fieldset>
+                    <fieldset class="column is-4">
+                      <label class=" checkbox-form checkbox">
+                        <input type="checkbox">
+                        Asphyxie
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Noyade
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Commotion, perte de connaissance, malaise
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Piqûre
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Plaie
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Morsure
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Lésion potentiellement infectieuse due au produit
+                        biologique
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Autres
+                      </label>
+                    </fieldset>
+                  </div>
+                </fieldset>
+                <fieldset class="columns">
+                  <div class="column is-12 column-flex">
+                    <legend class="label">Siège des lésions</legend>
+                    <fieldset class="column is-2">
+                      <map name="ma_map">
+                        <!--informations de votre map-->
+                        <area shape="rect" coords="35,10 115,90" href="#MAP" onclick="form()"/>
+                        <area shape="rect" coords="65,105 95,230" href="#MAP" onclick="form2()" />
+                        <area shape="default" />
+                     </map>
+                      <img usemap="#ma_map" src="/bonhomme.png" alt="corps humain">
+                    </fieldset>
+                    <fieldset id="tete" data-id="0" class="column is-2" style="display: none;">
+                      <legend class="label">Tête</legend>
+                      <label class=" checkbox-form checkbox">
+                        <input type="checkbox">
+                        Cou
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Crâne
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Face
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Nez
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        bouche
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Oreille
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Yeux
+                      </label>
+                    </fieldset>
+                    <fieldset id="main" data-id="0" class="column is-2" style="display: none;">
+                      <legend class="label">Main</legend>
+                      <label class=" checkbox-form checkbox">
+                        <input type="checkbox">
+                        Cou
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Crâne
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Face
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Nez
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        bouche
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Oreille
+                      </label>
+                      <label class="checkbox-form checkbox">
+                        <input type="checkbox">
+                        Yeux
+                      </label>
+                    </fieldset>
+                  </div>
+                </fieldset>   
+              </details>
+              <!--DECISION ADMINISTRATIVE-->   
+              <details class="message is-success message-padding">
+                <summary class="title is-5 details-margin">Décision administrative</summary>
+                <fieldset class="columns flex-form">
+                  <div class="column is-12">
+                    <legend class="label">Décision de l'autorité territorial sur l'imputabilité au service</legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Imputable
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non imputable
+                      </label>
+                      <p class="help">* La saisine de la Commission de Réforme est obligatoire lorsque la décision d'imputabilité est défavorable
+                        au fonctionnaire
+                      </p>
+                    </div>
+                  </div>
+                  <div class="column is-12">
+                    <legend class="label">Demande d'une expertise (le cas échéant)</legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Oui
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non 
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column is-12">
+                    <legend class="label">Saisine de la commision de réforme (le cas échéant)</legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Oui
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non 
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <legend class="label">Suite à l'accident de service / travail ou à la maladie pro, des mesures de prévention </legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Oui
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non 
+                      </label>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <legend class="label">Permettez-vous une analyse de l'accident par le CT/CHSCT</legend>
+                    <div class="control">
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Oui
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="answer">
+                        Non 
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </details>      
+              <!--INDETITE DECLARANT-->
+              <details class="message is-link message-padding">
+                <summary class="title is-5 details-margin">Identité du déclarant</summary>
+                <fieldset class="columns flex-form">
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Nom - Prénom</legend>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Jean - Patric">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Fonction</legend>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Agent">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend for="acci" class="label">Service</legend>
+                      <div class="select">
+                        <select id="acci">
+                          <option>Selectionnez un service</option>
+                          <option>Communication</option>
+                          <option>Ressources humain</option>
+                          <option>Pôle prévention</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Numéro de téléphone</legend>
+                      <div class="control">
+                        <input class="input" type="tel" placeholder="0692 11 22 33"pattern="[0-9]{4} [0-9]{2} [0-9]{2} [0-9]{2}">
+                        <p class="help">* Format 0692 11 22 33</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <legend class="label">Adresse mail</legend>
+                      <div class="control">
+                        <input class="input" type="email" placeholder="0692 11 22 33">
+                      </div>
+                    </div>
+                </fieldset>
+              </details>   
+              <button type="submit" class="button is-info">Déclarer mon accident</button>
+          </form>
+          </div>
+      </main>
+      <footer></footer>
+      </div>
+      <!--Les scripts-->
+      <!--Import Vuejs-->
+      <script src="./assets/vue.js"></script>
+      <!---------------->
+      <script src="burger.js"></script>
+      <script src="./assets/composant.js"></script>
+    </body>
+</html>

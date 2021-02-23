@@ -1,0 +1,65 @@
+//------------------------------------------------//
+// Mode nuit
+.darkmode_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #Dark-mode{
+        position: absolute;
+        left: -9999px;
+    }
+    label{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem;
+        border-radius: 10px;
+        width: 70px;
+        box-shadow: 0px 1px 6px grey;
+        cursor: pointer;
+        .ball{
+            background: gray;
+            position: absolute;
+            width: 50%;
+            top: 0;
+            border-radius: 10px;
+            height: 100%;
+            right: 50%;
+            transition: .5s ease-in-out;
+        }
+    }
+}
+#Dark-mode:checked + label .ball {
+    right: 0;
+}
+
+
+//--------------PAGE DE STYLE------------------------//
+//---Variable color night-----//
+$colorRed:#CF6679;
+
+.darkmode{
+    background-color: $darmode !important;
+    transition: .5s ease;
+    hr{background: #212121 !important;transition: .5s;}
+    .ball{background: rgba($color: white, $alpha: 0.5);transition: .5s;}
+    .dropdown-content{background:#212121;}
+    #header{
+        .alerte{background: $colorRed;transition: .5s;}
+        .navbar-menu, nav{
+            background-color: $darmode;
+            box-shadow: 1px 2px 3px rgba($color: black, $alpha:1);
+            transition: .5s ease;
+            a:hover{background:rgba($Couleurprincipal-night, $alpha:0.8)!important;}
+        }
+        a{color: rgba($color: white, $alpha: 0.8) !important;font-weight: 400 !important;transition: .5s;}
+        label{
+            background-color:#212121;
+            box-shadow:0px 1px 6px #212121;
+            transition: .5s;
+            i{color: rgba($color: white, $alpha: 0.6);}
+        }
+
+    }
+
+}

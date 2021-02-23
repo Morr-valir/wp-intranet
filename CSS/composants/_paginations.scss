@@ -1,0 +1,24 @@
+.page-numbers{
+    border-radius: 5px;
+    padding: 10px;
+    background: white;
+    box-shadow: 1px 1px 2px grey;
+}
+#pagination_post{
+    list-style: none;
+    padding: .9rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px gainsboro;
+    display: flex;
+    justify-content: space-between;
+}
+
+//---Dark mode
+.darkmode{
+    #pagination_post{
+        background: $DarkArticle;
+        box-shadow: 1px 2px 5px black;
+
+    }
+}
