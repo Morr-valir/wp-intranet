@@ -644,6 +644,8 @@ body {
 
 #header .navbar ul li :hover {
   background: #01672a !important;
+  color: whitesmoke;
+  font-weight: 500;
 }
 
 #header .navbar .alerte {

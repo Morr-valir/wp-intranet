@@ -56,3 +56,4 @@ function msk_custom_admin_color_palette() {
     );
   }
   add_action('admin_init', 'msk_custom_admin_color_palette');
+  
