@@ -73,7 +73,47 @@ Vue.component('ArticlePost',{
   <header>
     <!--IMG & INFO-->
     <div class="column">
-      <figure v-html="avatar" class="image is-64x64">
+      <figure  class="image is-64x64">
+      <img :src="avatar"/>
+      </figure>
+      <p class="info-article">
+        <strong>{{auteur}}</strong>
+        <br>
+        <small>{{date}}</small>
+      </p>
+    </div>
+    <!--Tag Alert-->
+    <div class="colmun">
+      <tag :class="pic">{{type}}</tag>
+    </div>
+  </header>
+  <main>
+    <h2 class="subtile is-4">{{titre}}</h2>
+  </main>
+</article>
+</a>
+  `
+})
+//-------------------------------
+//----COMPOSANT MOT----------
+Vue.component('MotPost',{
+  props:{
+    titre:      String,
+    auteur:     String,
+    date:       String,
+    avatar:     String,
+    type:       String,
+    pic:        String,
+    lien:       String,
+    },
+  template:`
+  <a :href="lien">
+  <article class="box">
+  <!--Header article-->
+  <header>
+    <!--IMG & INFO-->
+    <div class="column">
+      <figure v-html="avatar"  class="image is-64x64">
       </figure>
       <p class="info-article">
         <strong>{{auteur}}</strong>

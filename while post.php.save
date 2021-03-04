@@ -1,0 +1,34 @@
+            <transition-group name="slide-fade">
+            <hr key="1" v-show="affiche">
+            <ul class="filtre" key="2" v-show="affiche">
+              <li><a href="">Tous</a></li>
+              <li><a href="">Informations</a></li>
+              <li><a href="">Recrutement</a></li>
+              <li><a href="">urgent</a></li>
+            </ul>
+              <div class="columns is-multiline" v-show="affiche" key="3">
+              <?php
+                $args = array(
+                  'post_type'       => 'post',
+                  'posts_per_page'  => 4,
+                  'orderby'         => 'date',
+                );
+                $recentPosts = new WP_Query($args);
+              ?>
+              <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                <div class="column is-6">
+                  <article-post 
+                        titre="<?php the_title(); ?>" 
+                        auteur="<?php the_author(); ?>" 
+                        date="Publié le <?php the_time( get_option( 'date_format' ) ); ?>" 
+                        avatar="<?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>" 
+                        type="<?php the_field( 'niveau_dimportance' ); ?>" 
+                        pic="<?php the_field( 'niveau_dimportance' ); ?>"
+                        lien="<?php the_permalink(); ?>"
+                        data-type="<?php the_field( 'niveau_dimportance' ); ?>"
+                    />
+              </div>
+              <?php endwhile; wp_reset_postdata(); ?>
+              </comp>
+              </div>
+            </transition-group>

@@ -27,29 +27,17 @@
               <li><a href="">urgent</a></li>
             </ul>
               <div class="columns is-multiline" v-show="affiche" key="3">
-              <?php
-                $args = array(
-                  'post_type'       => 'post',
-                  'posts_per_page'  => 4,
-                  'orderby'         => 'date',
-                );
-                $recentPosts = new WP_Query($args);
-              ?>
-              <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
-                <div class="column is-6">
-                  <article-post 
-                        titre="<?php the_title(); ?>" 
-                        auteur="<?php the_author(); ?>" 
-                        date="Publié le <?php the_time( get_option( 'date_format' ) ); ?>" 
-                        avatar="<?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>" 
-                        type="<?php the_field( 'niveau_dimportance' ); ?>" 
-                        pic="<?php the_field( 'niveau_dimportance' ); ?>"
-                        lien="<?php the_permalink(); ?>"
-                        data-type="<?php the_field( 'niveau_dimportance' ); ?>"
-                    />
+                <div class="column is-6" v-for="article in Posts">
+                  <article-post
+                    :titre='article.title'
+                    :auteur='article.author.node.name'
+                    :lien='article.link'
+                    :date='article.date'
+                    :avatar='article.author.node.avatar.url'
+                    :type='article.tag_info.niveauDimportance' 
+                    :pic='article.tag_info.niveauDimportance'
+                 />
               </div>
-              <?php endwhile; wp_reset_postdata(); ?>
-              </comp>
               </div>
             </transition-group>
           </div>
@@ -61,7 +49,7 @@
               $the_query = new WP_Query( $args );
               $the_query = new WP_Query($args);
               while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                  <article-post 
+                  <mot-post 
                       titre="<?php the_title(); ?>" 
                       auteur="<?php the_author(); ?>" 
                       date="Publié le <?php the_time( get_option( 'date_format' ) ); ?>" 
