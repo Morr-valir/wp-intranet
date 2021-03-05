@@ -59,14 +59,15 @@ Vue.component('tag', {
 Vue.component('ContainerPost',{
   template:`
   <div class="Post-article">
-  <ul class="filtre">
-    <li><a href="">Tous</a></li>
-    <li><a href="">Informations</a></li>
-    <li><a href="">Recrutement</a></li>
-    <li><a href="">urgent</a></li>
-  </ul>
+  <select v-model="filtre" class="filtre">
+    <option value="All">Tous</option>
+    <option value="Information">Information</option>
+    <option value="Recrutement">Recrutement</option>
+    <option value="Maintenance">Maintenance</option>
+  </select>
+
   <div class="columns is-multiline">
-      <div class="column is-6" v-for="article in Posts">
+      <div class="column is-6" v-for="article in filteredPosts">
         <article-post :titre='article.title' :auteur='article.author.node.name' :lien='article.link' :date='article.date'
         :avatar='article.author.node.avatar.url' :type='article.tag_info.niveauDimportance'  :pic='article.tag_info.niveauDimportance'/>
       </div>
@@ -76,6 +77,7 @@ Vue.component('ContainerPost',{
   data() {
     return {
       Posts:[],
+      filtre:"All",
     }
   },
   mounted() {
@@ -110,6 +112,20 @@ Vue.component('ContainerPost',{
     }).then(response => (this.Posts = response.data.data.posts.nodes))
 
   },
+  computed: {
+		filteredPosts: function() {
+			var vm = this;
+			var category = vm.filtre;
+			
+			if(category === "All") {
+				return vm.Posts;
+			} else {
+				return vm.Posts.filter(function(Post) {
+					return Post.tag_info.niveauDimportance === category;
+				});
+			}
+		}
+	}
 })
 //-------------------------------
 //----COMPOSANT ARTICLE----------
