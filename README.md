@@ -12,7 +12,7 @@ Modification des fichiers script et ajout de l'API Wordpress via axios
   <li>Utilisation de GraphQL pour l'utilisation de l'API de Wordpress</li>
   <li>Ajout d'éléments de styles t'elle que : pagination, fil d'arianne</li>
   <li>Ajout de fonction "test" de filtre d'article sur la page d'accueil</li>
-  <li>Affiche de module articles dans un composants pour l'optimisation de l'utilisation des données</li>
+  <li>Affichage du module article dans un composants pour l'optimisation de l'utilisation des données</li>
 </ul>
 
 
