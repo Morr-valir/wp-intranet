@@ -8,9 +8,13 @@ Modification des fichiers script et ajout de l'API Wordpress via axios
 - Optimisation de l'affichage des articles.
 <br>
 - Optimisation de style & ajout d'un mode nuit
+<br>
 - Utilisation de GraphQL pour l'utilisation de l'API de Wordpress
+<br>
 - Ajout d'éléments de styles t'elle que : pagination, fil d'arianne
+<br>
 - Ajout de fonction "test" de filtre d'article sur la page d'accueil
+<br>
 - Affiche de module articles dans un composants pour l'optimisation de l'utilisation des données
 
 
