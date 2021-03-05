@@ -17,29 +17,9 @@
         <!--Les actus-->
         <section id="Actu" class="block">
           <div class="container">          
-            <h1 @click="affiche = ! affiche" class="title is-4">L'actu</h1>
-            <transition-group name="slide-fade">
-            <hr key="1" v-show="affiche">
-            <ul class="filtre" key="2" v-show="affiche">
-              <li><a href="">Tous</a></li>
-              <li><a href="">Informations</a></li>
-              <li><a href="">Recrutement</a></li>
-              <li><a href="">urgent</a></li>
-            </ul>
-              <div class="columns is-multiline" v-show="affiche" key="3">
-                <div class="column is-6" v-for="article in Posts">
-                  <article-post
-                    :titre='article.title'
-                    :auteur='article.author.node.name'
-                    :lien='article.link'
-                    :date='article.date'
-                    :avatar='article.author.node.avatar.url'
-                    :type='article.tag_info.niveauDimportance' 
-                    :pic='article.tag_info.niveauDimportance'
-                 />
-              </div>
-              </div>
-            </transition-group>
+            <h1 class="title is-4">L'actu</h1>
+            <hr>
+            <container-post></container-post>
           </div>
         </section>
         <!--Les mots du maire-->
