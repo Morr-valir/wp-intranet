@@ -4,6 +4,7 @@ Thème wordpress pour infrastructure Interne
 Ajout des fichiers pour le thème wordpress
 <br>
 Modification des fichiers script et ajout de l'API Wordpress via axios
+
 # 05/03/21 - Avancement des travaux
 <label></label>
 <ul>
@@ -14,6 +15,7 @@ Modification des fichiers script et ajout de l'API Wordpress via axios
   <li>Ajout de fonction "test" de filtre d'article sur la page d'accueil</li>
   <li>Affichage du module article dans un composants pour l'optimisation de l'utilisation des données</li>
 </ul>
+
 # 08/03/21 - Bug sur l'affichage de l'heure
 <ul>
 <li>Recherche de solution pour l'affichage de plus envisagé</li>
