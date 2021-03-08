@@ -16,7 +16,7 @@
         <!--Les actus-->
         <section id="Actu" class="block">
           <div class="container">          
-            <h1 @click="affiche = ! affiche" class="title is-4">Archive des articles</h1>
+            <h1 class="title is-4">Archive des articles</h1>
             <hr>
             <ul class="filtre">
               <li><a href="">Tous</a></li>
@@ -25,7 +25,7 @@
               <li><a href="">urgent</a></li>
             </ul>
             <transition name="slide-fade">
-              <<div class="columns is-multiline" v-show="affiche">
+              <<div class="columns is-multiline">
               <?php
                 $recentPosts = new WP_Query();
                 $recentPosts->query('showposts=2');

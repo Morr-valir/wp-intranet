@@ -68,7 +68,7 @@ Vue.component('ContainerPost',{
 
   <div class="columns is-multiline">
       <div class="column is-6" v-for="article in filteredPosts">
-        <article-post :titre='article.title' :auteur='article.author.node.name' :lien='article.link' :date='article.date'
+        <article-post :titre='article.title' :auteur='article.author.node.name' :lien='article.link' :date='article.tag_info.date'
         :avatar='article.author.node.avatar.url' :type='article.tag_info.niveauDimportance'  :pic='article.tag_info.niveauDimportance'/>
       </div>
   </div>
@@ -97,10 +97,10 @@ Vue.component('ContainerPost',{
                     }
                   }
                 }
-                date
                 title
                 tag_info {
                   niveauDimportance
+                  date
                 }
                 link
               }
@@ -152,7 +152,7 @@ Vue.component('ArticlePost',{
       <p class="info-article">
         <strong>{{auteur}}</strong>
         <br>
-        <small>{{date}}</small>
+        <time>{{date}}</time>
       </p>
     </div>
     <!--Tag Alert-->
@@ -228,6 +228,7 @@ Vue.component('Dropdown',{
             },}
 
 })
+
 
 //--INSTANCE DE VUEJS
 const AppVue = new Vue({

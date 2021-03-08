@@ -4,19 +4,19 @@
         <section id="moteur" class="block">
           <div class="container">
             <div class="search">
-              <logo lien="<?php echo get_template_directory_uri(); ?>./img/LOGO_POSSESSION_Slogan.jpg"></logo>
+              <div class="logo-mairie"></div>
               <?php if (is_active_sidebar('nouvelle_zone')) : ?>
                 <section id="sidebar-recherche">
                 <?php dynamic_sidebar('nouvelle_zone');?>
               </section>
-              <?php endif; ?>
+              <?php endif; wp_reset_postdata(); ?>
             </div>
           </div>
         </section>
         <!--Les actus-->
         <section id="Actu" class="block">
           <div class="container">          
-            <h1 @click="affiche = ! affiche" class="title is-4">Archive des articles</h1>
+            <h1 class="title is-4">Archive des articles</h1>
             <hr>
             <ul class="filtre">
               <li><a href="">Tous</a></li>
@@ -25,7 +25,7 @@
               <li><a href="">urgent</a></li>
             </ul>
             <transition name="slide-fade">
-              <<div class="columns is-multiline" v-show="affiche">
+              <div class="columns is-multiline">
               <?php
                 $recentPosts = new WP_Query();
                 $recentPosts->query('showposts=2');
