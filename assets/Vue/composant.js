@@ -55,79 +55,6 @@ Vue.component('tag', {
     `
 })
 //-------------------------------
-//----COMPOSANT CONTAINER POST----------
-Vue.component('ContainerPost',{
-  template:`
-  <div class="Post-article">
-  <select v-model="filtre" class="filtre">
-    <option value="All">Tous</option>
-    <option value="Information">Information</option>
-    <option value="Recrutement">Recrutement</option>
-    <option value="Maintenance">Maintenance</option>
-  </select>
-
-  <div class="columns is-multiline">
-      <div class="column is-6" v-for="article in filteredPosts">
-        <article-post :titre='article.title' :auteur='article.author.node.name' :lien='article.link' :date='article.tag_info.date'
-        :avatar='article.author.node.avatar.url' :type='article.tag_info.niveauDimportance'  :pic='article.tag_info.niveauDimportance'/>
-      </div>
-  </div>
-</div>
-  `,
-  data() {
-    return {
-      Posts:[],
-      filtre:"All",
-    }
-  },
-  mounted() {
-    axios({
-      url: 'http://localhost:8080/wordpress/graphql',
-      method: 'post',
-      data: {
-        query: `
-        query MyQuery {
-          posts(first: 4) {
-              nodes {
-                author {
-                  node {
-                    name
-                    avatar {
-                      url
-                    }
-                  }
-                }
-                title
-                tag_info {
-                  niveauDimportance
-                  date
-                }
-                link
-              }
-            }
-          }
-        
-          `
-      }
-    }).then(response => (this.Posts = response.data.data.posts.nodes))
-
-  },
-  computed: {
-		filteredPosts: function() {
-			var vm = this;
-			var category = vm.filtre;
-			
-			if(category === "All") {
-				return vm.Posts;
-			} else {
-				return vm.Posts.filter(function(Post) {
-					return Post.tag_info.niveauDimportance === category;
-				});
-			}
-		}
-	}
-})
-//-------------------------------
 //----COMPOSANT ARTICLE----------
 Vue.component('ArticlePost',{
   props:{
@@ -146,8 +73,7 @@ Vue.component('ArticlePost',{
   <header>
     <!--IMG & INFO-->
     <div class="column">
-      <figure  class="image is-64x64">
-      <img :src="avatar"/>
+      <figure v-html="avatar"  class="image is-64x64">
       </figure>
       <p class="info-article">
         <strong>{{auteur}}</strong>

@@ -19,8 +19,31 @@
           <div class="container">          
             <h1 class="title is-4">L'actu</h1>
             <hr>
-            <container-post></container-post>
-          </div>
+              <div class="columns is-multiline">
+              <?php
+                $args = array(
+                  'post_type'       => 'post',
+                  'posts_per_page'  => 4,
+                  'orderby'         => 'date',
+                );
+                $recentPosts = new WP_Query($args);
+              ?>
+              <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                <div class="column is-6">
+                  <article-post 
+                        titre="<?php the_title(); ?>" 
+                        auteur="<?php the_author(); ?>" 
+                        date="Publié le <?php the_time( get_option( 'date_format' ) ); ?>" 
+                        avatar="<?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>" 
+                        type="<?php the_field( 'niveau_dimportance' ); ?>" 
+                        pic="<?php the_field( 'niveau_dimportance' ); ?>"
+                        lien="<?php the_permalink(); ?>"
+                        data-type="<?php the_field( 'niveau_dimportance' ); ?>"
+                    />
+              </div>
+              <?php endwhile; wp_reset_postdata(); ?>
+              </div>
+              </div>
         </section>
         <!--Les mots du maire-->
         <section-maire>
