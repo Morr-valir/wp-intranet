@@ -4,7 +4,7 @@
   font-family: 'Morebi Rounded Regular';
   font-style: normal;
   font-weight: normal;
-  src: local("Morebi Rounded Regular"), url("GT-CANARY - MorebiRounded-Regular.woff") format("woff");
+  src: local("Morebi Rounded Regular"), url("../fonts/GT-CANARY - MorebiRounded-Regular.woff") format("woff");
 }
 
 body {
@@ -49,6 +49,7 @@ body {
 }
 
 #Actu article main {
+  padding: .75rem;
   display: -ms-inline-grid;
   display: inline-grid;
 }
@@ -72,13 +73,13 @@ body {
   font-size: 1em;
 }
 
+#Mots-maire article main {
+  padding: .75rem;
+}
+
 #Mots-maire article main .subtile {
   color: #1E73BE;
   font-weight: 600;
-}
-
-#Mots-maire ion-icon {
-  margin-right: 15px;
 }
 
 #sondage .filtre {
@@ -710,47 +711,6 @@ body {
   font-weight: 600;
   border-color: transparent;
   padding: 9px;
-}
-
-#application .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#application .container .appM {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  width: 500px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-#application .container .appM .app {
-  padding: 1em;
-  font-size: 1.5em;
-  text-align: center;
-}
-
-#application .container .appM span {
-  width: 100%;
 }
 
 .page-template-page-prevention .page-prevention {

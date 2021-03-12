@@ -98,25 +98,6 @@
     }
     }
 }
-//Liste des applications
-#application{
-    .container{
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        .appM{
-            display: flex;
-            flex-flow: row wrap;
-            width: 500px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            .app{padding: 1em;font-size: 1.5em;text-align: center;}
-            span{width: 100%;}
-        }
-    }
-
-}
 //Page Prevention
 .page-template-page-prevention{
     .page-prevention{text-align: center;}
