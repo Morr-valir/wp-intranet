@@ -196,14 +196,14 @@ const AppVue = new Vue({
                   "id":"1",
                   "pole":"Mairie centrale",
                   "type":"Externe",
-                  "nom":"Accueil",
+                  "nom":"Standard mairie",
                   "tel":"0262 22 20 02"
               },
               {
                   "id":"2",
                   "pole":"Mairie centrale",
                   "type":"Interne",
-                  "nom":"Accueil",
+                  "nom":"Standard",
                   "tel":"100"
               },
               {
@@ -266,7 +266,7 @@ const AppVue = new Vue({
                   "id":"11",
                   "pole":"Pôle ressources humaines",
                   "type":"Externe",
-                  "nom":"Accueil RH",
+                  "nom":"Service RH",
                   "tel":"0262 22 43 92"
               },
               {
@@ -371,7 +371,7 @@ const AppVue = new Vue({
                   "id":"26",
                   "pole":"Pôle finance",
                   "type":"Externe",
-                  "nom":"Accueil ficance",
+                  "nom":"Pôle ficance",
                   "tel":"0262 22 03 94"
               },
               {
@@ -497,7 +497,7 @@ const AppVue = new Vue({
                   "id":"44",
                   "pole":"Cabinet du Maire",
                   "type":"Externe",
-                  "nom":"Accueil cabinet du Maire",
+                  "nom":"standard cabinet",
                   "tel":"0262 22 24 21"
               },
               {
@@ -553,7 +553,7 @@ const AppVue = new Vue({
                   "id":"52",
                   "pole":"Service informatique",
                   "type":"Externe",
-                  "nom":"Accueil",
+                  "nom":"Standard informatique",
                   "tel":"0262 22 24 22"
               },
               {
@@ -700,7 +700,7 @@ const AppVue = new Vue({
                   "id":"73",
                   "pole":"Service communication",
                   "type":"Externe",
-                  "nom":"Accueil",
+                  "nom":"Standard communication",
                   "tel":"0262 54 55 00"
               },
               {
@@ -749,7 +749,7 @@ const AppVue = new Vue({
                   "id":"80",
                   "pole":"Police municipale",
                   "type":"Externe",
-                  "nom":"Accueil",
+                  "nom":"Standard police",
                   "tel":"0262 22 03 89"
               },
               {
