@@ -1,0 +1,32 @@
+.box{
+    background: #ffffff;
+    margin: 5px;
+    border-radius: 5px; 
+    .carte-header{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        p{
+            text-align: initial;
+        }
+    }           
+}
+.darkmode {
+    .box{
+        background: #212121;
+        margin: 5px;
+        border-radius: 5px;
+        .carte-header{
+            display: flex;
+            justify-content: space-between;
+            p{
+                color:rgba(255,255,255,.8);
+                text-align: initial;
+            }
+            .tag{
+                background: #0a0a0a;
+                color:rgba(255,255,255,.6)
+            }
+        }           
+    } 
+}

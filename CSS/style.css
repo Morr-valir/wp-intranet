@@ -10,6 +10,7 @@
 body {
   font-family: "Morebi Rounded Regular" !important;
   background: whitesmoke;
+  min-height: 100vh;
 }
 
 .subtile {
@@ -445,6 +446,51 @@ body {
 
 .darkmode .dropdown-content {
   color: whitesmoke;
+}
+
+.box {
+  background: #ffffff;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.box .carte-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: 700;
+}
+
+.box .carte-header p {
+  text-align: initial;
+}
+
+.darkmode .box {
+  background: #212121;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.darkmode .box .carte-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.darkmode .box .carte-header p {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: initial;
+}
+
+.darkmode .box .carte-header .tag {
+  background: #0a0a0a;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 #main hr {
