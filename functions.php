@@ -56,4 +56,6 @@ function msk_custom_admin_color_palette() {
     );
   }
   add_action('admin_init', 'msk_custom_admin_color_palette');
-  
+  //Style et balise plugin contact form 7 
+add_filter('wpcf7_autop_or_not', '__return_false');
+add_filter( 'wpcf7_load_js', '__return_false' );
