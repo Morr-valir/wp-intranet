@@ -27,6 +27,7 @@
             <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
             </div>
             <div class="navbar-end login">
+            <!--Bouton mode nuit-->
             <div class="darkmode_box">
                 <input type="checkbox" id="Dark-mode">
                 <label for="Dark-mode">
@@ -34,8 +35,36 @@
                   <i class="fas fa-sun"></i>
                   <div class="ball"></div>
                 </label>
-              </div>
-              <a class="login-link" href="/liste-formulaire">Mes déclarations</a>
+            </div>
+              <a class="login-link" href="">Mes déclarations</a>
+                <modal-app>
+                  <div class="app-box">
+                    <span class="app">
+                        <a href="http://172.16.1.149/" target="_blank">
+                          <img src="<?php echo get_template_directory_uri();?>/assets/app/ciril.svg" alt="CIRIL APP"/>
+                          <p>CIRIL</p>
+                        </a>
+                    </span>
+                    <span class="app">
+                      <a href="https://lapossession.exodata.fr/" target="_blank">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/app/mail.svg" alt="ZIMBRA APP"/>  
+                        <p>ZIMBRA</p>
+                      </a>
+                    </span>
+                    <span class="app">
+                    <a href="http://courrier/" target="_blank">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/app/cindoc.svg" alt="CINDOC APP"/>  
+                        <p>CINDOC</p>
+                    </a>
+                    </span>
+                    <span class="app">
+                      <a href="https://trello.com/" target="_blank">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/app/trello.svg" alt="CINDOC APP"/>  
+                        <p>TRELLO</p>
+                      </a>
+                    </span>
+                  </div>
+                </modal-app>
               <Dropdown>
               <?php
               if ( ! is_user_logged_in() ) { // Display WordPress login form:

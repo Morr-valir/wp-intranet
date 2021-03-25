@@ -55,7 +55,7 @@
                   <mot-post titre="<?php the_title(); ?>" auteur="<?php the_author(); ?>" date="Publié le <?php the_time( get_option( 'date_format' ) ); ?>" 
                       avatar="<?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>" type="<?php the_field( 'niveau_dimportance' ); ?>" 
                       pic="<?php the_field( 'niveau_dimportance' ); ?>"lien="<?php the_permalink(); ?>"/>           
-               <?php endwhile; wp_reset_postdata();?>
+        <?php endwhile; wp_reset_postdata();?>
         </section-maire>
         <!--Les sondages-->
         <section id="sondage" class="block">

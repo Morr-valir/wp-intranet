@@ -154,6 +154,8 @@ Vue.component('Dropdown',{
             },}
 
 })
+//------------------------------
+//---TABLEAU-------------------
 Vue.component('liste', {
   props: ["nom","service","type","num"],
   template: 
@@ -184,7 +186,41 @@ Vue.component('tableau', {
 </table>
   `,
 })
-
+//------------------------------
+//---Modal APP-------------------
+Vue.component("ModalApp", {
+  template: `
+        <div class="login-link">
+            <a @click='toggleShow'>Mes applications</a>
+            <div class="modal"v-if='showModal'>
+                <div class="modal-background" v-if='showModal'  @click="showModal = false"></div>
+                    <div class="modal-content">
+                            <div class="container">
+                                <div>
+                                    <div class="box-title">
+                                        <span class="title is-4">Applications métier</span>
+                                    </div>
+                                    <section class="content-app">
+                                        <slot/>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    `,
+  data: () => {
+    return {
+      showModal: false,
+    };
+  },
+  methods: {
+    toggleShow: function () {
+      this.showModal = !this.showMenu;
+    },
+  },
+});
 //--INSTANCE DE VUEJS
 const AppVue = new Vue({
   el: '#app',
