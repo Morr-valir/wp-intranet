@@ -194,7 +194,7 @@ body {
   padding-right: .75em;
   white-space: nowrap;
   background: #48c774;
-  color: whitesmoke;
+  color: #1f0f0f;
 }
 
 .Recrutement i {
@@ -219,7 +219,7 @@ body {
   padding-right: .75em;
   white-space: nowrap;
   background: #e7a522;
-  color: whitesmoke;
+  color: #291a1a;
   font-size: 1rem;
 }
 
@@ -255,6 +255,10 @@ body {
 .darkmode .Information {
   color: #212121;
   background: #e7a522 !important;
+}
+
+.darkmode .Recrutement {
+  color: #1f0f0f;
 }
 
 .page-numbers {
@@ -577,7 +581,7 @@ body {
 }
 
 .darkmode #main .title {
-  color: rgba(1, 103, 42, 0.87);
+  color: rgba(34, 189, 97, 0.87);
   font-weight: 400;
 }
 
