@@ -50,10 +50,10 @@
                       </a>
                     </span>
                     <span class="app">
-                    <a href="http://courrier/" target="_blank">
+                      <a href="http://courrier/" target="_blank">
                         <img src="<?php echo get_template_directory_uri();?>/assets/app/cindoc.svg" alt="CINDOC APP"/>  
                         <p class="app-title">CINDOC</p>
-                    </a>
+                     </a>
                     </span>
                     <span class="app">
                       <a href="https://trello.com/" target="_blank">
