@@ -188,7 +188,7 @@ Vue.component('tableau', {
 })
 //------------------------------
 //---Modal APP-------------------
-Vue.component("ModalApp", {
+const modal = Vue.component("ModalApp", {
   template: `
         <div class="login-link">
             <a @click='toggleShow'>Mes applications</a>
