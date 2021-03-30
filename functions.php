@@ -17,7 +17,6 @@ function intranet_register_assets() {
 
 }
 add_action( 'wp_enqueue_scripts', 'intranet_register_assets' );
-
 //Widget Zone de recherche
 add_action( 'widgets_init', 'nouvelle_zone_widgets_init' );
 function nouvelle_zone_widgets_init() {
