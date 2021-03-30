@@ -1,7 +1,6 @@
 <?php 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
-
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
 //Widget Zone de recherche
@@ -59,3 +58,96 @@ function msk_custom_admin_color_palette() {
   //Style et balise plugin contact form 7 
 add_filter('wpcf7_autop_or_not', '__return_false');
 add_filter( 'wpcf7_load_js', '__return_false' );
+//Ajout custom post type "Sondages"
+function wp_custom_post_type_sondages() {
+
+	// On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
+	$labels = array(
+		// Le nom au pluriel
+		'name'                => _x( 'Sondages', 'Post Type General Name'),
+		// Le nom au singulier
+		'singular_name'       => _x( 'Sondage', 'Post Type Singular Name'),
+		// Le libellé affiché dans le menu
+		'menu_name'           => __( 'Les sondages'),
+		// Les différents libellés de l'administration
+		'all_items'           => __( 'Tous les sondages'),
+		'view_item'           => __( 'Voir les sondages'),
+		'add_new_item'        => __( 'Ajouter un nouveau sondage'),
+		'add_new'             => __( 'Ajouter'),
+		'edit_item'           => __( 'Editer un sondage'),
+		'update_item'         => __( 'Modifier un sondage'),
+		'search_items'        => __( 'Rechercher un sondage'),
+		'not_found'           => __( 'Non trouvée'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+	// On peut définir ici d'autres options pour notre custom post type
+	$args = array(
+		'label'               => __( 'sondage'),
+		'description'         => __( 'Tous sur les Sondages'),
+		'labels'              => $labels,
+		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		/* 
+		* Différentes options supplémentaires
+		*/
+		'show_in_rest' => true,
+		'hierarchical'        => false,
+		'public'              => true,
+		'has_archive'         => true,
+		'rewrite'			  => array( 'slug' => 'sondage'),
+		'capability_type'     => 'sondage',
+        'menu_icon'           => 'dashicons-info',
+		'map_meta_cap'        => true,
+		'taxonomies'          => array( 'category' ),
+
+	);
+	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
+	register_post_type( 'sondage', $args );
+
+}
+add_action( 'init', 'wp_custom_post_type_sondages', 0 );
+//Ajout custom post type "Mot du Maire"
+function wp_custom_post_type_mot() {
+	// On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
+	$labels = array(
+		// Le nom au pluriel
+		'name'                => _x( 'Mot du maire', 'Post Type General Name'),
+		// Le nom au singulier
+		'singular_name'       => _x( 'Mot du maires', 'Post Type Singular Name'),
+		// Le libellé affiché dans le menu
+		'menu_name'           => __( 'Les mots du maire'),
+		// Les différents libellés de l'administration
+		'all_items'           => __( 'Tous les mots'),
+		'view_item'           => __( 'Voir les mots'),
+		'add_new_item'        => __( 'Ajouter un nouveau mot'),
+		'add_new'             => __( 'Ajouter'),
+		'edit_item'           => __( 'Editer un mot'),
+		'update_item'         => __( 'Modifier un mot'),
+		'search_items'        => __( 'Rechercher un mot'),
+		'not_found'           => __( 'Non trouvée'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+	// On peut définir ici d'autres options pour notre custom post type
+	$args = array(
+		'label'               => __( 'mot_du_maire'),
+		'description'         => __( 'Tous sur les mots'),
+		'labels'              => $labels,
+		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		//Différentes options supplémentaires
+		'show_in_rest' => true,
+		'hierarchical'        => false,
+		'public'              => true,
+		'has_archive'         => true,
+		'rewrite'			  => array( 'slug' => 'mot'),
+		'capability_type'       => 'mot',
+        'menu_icon' => 'dashicons-welcome-write-blog',
+		'map_meta_cap'          => true,
+		'taxonomies'          => array( 'category' ),
+
+
+	);
+	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
+	register_post_type( 'mot_du_maire', $args );
+}
+add_action( 'init', 'wp_custom_post_type_mot', 0 );
