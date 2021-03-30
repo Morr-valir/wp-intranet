@@ -3,6 +3,21 @@
 add_theme_support( 'post-thumbnails' );
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
+// Ajout des Scripts et du style CSS
+function intranet_register_assets() {
+    // Déclarer un autre fichier CSS
+    wp_enqueue_style( 'Bulma', get_template_directory_uri() . '/CSS/bulma.min.css',array(), '1.0');
+    wp_enqueue_style( 'Main-CSS', get_template_directory_uri() . '/CSS/style.css',array(), '1.0');
+    //Import des scripts
+    wp_enqueue_script( 'Burger', get_template_directory_uri() . '/assets/burger.js', array(), '1.0', true);
+    wp_enqueue_script( 'Axios', 'https://unpkg.com/axios/dist/axios.min.js', array(), '1.0', true);
+    wp_enqueue_script( 'Vue', 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js', array(), '1.0', true);
+    wp_enqueue_script( 'Vue-comp', get_template_directory_uri() . '/assets/Vue/composant.js', array(), '1.0', true);
+    wp_enqueue_script( 'Darkmode', get_template_directory_uri() . '/assets/darkmode.js', array(), '1.0', true);
+
+}
+add_action( 'wp_enqueue_scripts', 'intranet_register_assets' );
+
 //Widget Zone de recherche
 add_action( 'widgets_init', 'nouvelle_zone_widgets_init' );
 function nouvelle_zone_widgets_init() {

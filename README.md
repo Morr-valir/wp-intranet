@@ -16,9 +16,11 @@ Modification des fichiers script et ajout de l'API Wordpress via axios
   <li>Affichage du module article dans un composants pour l'optimisation de l'utilisation des données</li>
 </ul>
 
-# 08/03/21 - Bug sur l'affichage de l'heure
+# 30/03/21 - Bug sur l'affichage de l'heure
 <ul>
-<li>Recherche de solution pour l'affichage de plus envisagé</li>
+<li>Optimisation du code</li>
+<li>Ajout de custom post et assets dans le fichier functions</li>
+<li>Ajout annuaire via vuejs & liste des app métier</li>
 </ul>
 
 
