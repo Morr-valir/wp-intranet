@@ -27,10 +27,14 @@
             <transition name="slide-fade">
               <div class="columns is-multiline">
               <?php
-                $recentPosts = new WP_Query();
-                $recentPosts->query('showposts=4');
+              $args = array(
+                  'post_type'       => 'post',
+                  'posts_per_page'  => 6,
+                  'orderby'         => 'date',
+                );
+                $recentPosts = new WP_Query($args);
               ?>
-              <?php while( have_posts() ) : the_post(); ?>
+              <?php while($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
                 <div class="column is-6">
                   <article class="box">
                   <!--Header article-->
