@@ -11,7 +11,7 @@ function intranet_register_assets() {
     //Import des scripts
     wp_enqueue_script( 'Burger', get_template_directory_uri() . '/assets/burger.js', array(), '1.0', true);
     wp_enqueue_script( 'Axios', 'https://unpkg.com/axios/dist/axios.min.js', array(), '1.0', true);
-    wp_enqueue_script( 'Vue', 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js', array(), '1.0', true);
+    wp_enqueue_script( 'Vue', get_template_directory_uri() . '/assets/Vue/vue.min.js', array(), '1.0', true);
     wp_enqueue_script( 'Vue-comp', get_template_directory_uri() . '/assets/Vue/composant.js', array(), '1.0', true);
     wp_enqueue_script( 'Darkmode', get_template_directory_uri() . '/assets/darkmode.js', array(), '1.0', true);
 
