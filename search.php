@@ -4,7 +4,7 @@
         <section id="moteur" class="block">
           <div class="container">
             <div class="search">
-              <logo lien="<?php echo get_template_directory_uri(); ?>./img/LOGO_POSSESSION_Slogan.jpg"></logo>
+            <div class="logo-mairie"></div>
               <?php if (is_active_sidebar('nouvelle_zone')) : ?>
                 <section id="sidebar-recherche">
                 <?php dynamic_sidebar('nouvelle_zone');?>
