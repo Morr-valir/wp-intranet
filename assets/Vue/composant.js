@@ -10,20 +10,20 @@ Vue.component('tag', {
   //------------------------------
   //-------Sondage----------
   Vue.component('BoxSondage', {
-    props:{ link: String,
+    props:{ lien: String,
             type: String,
           },
     template: `
-        <a v-bind:href="link">
-        <div class="column" :class="type">
-        <div class="box-sondage box">
-        <span>
-        <i class="fas fa-info-circle"></i>
-        <slot/>
-        </span>
-        </div>
-        </div>
-        </a>
+            <div class="column" :class="type">
+            <a :href="lien" target ="_blank">
+                <div class="box-sondage box">
+                    <span>
+                        <i class="fas fa-info-circle"></i>
+                        <slot/>
+                    </span>
+                </div>
+            </a>
+            </div>
     `
 })
   //------------------------------

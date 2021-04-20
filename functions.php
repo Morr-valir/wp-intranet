@@ -75,7 +75,7 @@ add_filter( 'wpcf7_load_js', '__return_false' );
 //Ajout custom post type "Sondages"
 function wp_custom_post_type_sondages() {
 
-	// On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
+	// On rentre les différentes dénominations de notre custom post type
 	$labels = array(
 		// Le nom au pluriel
 		'name'                => _x( 'Sondages', 'Post Type General Name'),
@@ -94,13 +94,13 @@ function wp_custom_post_type_sondages() {
 		'not_found'           => __( 'Non trouvée'),
 		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
 	);
-	// On peut définir ici d'autres options pour notre custom post type
+	// On défini ici d'autres options pour notre custom post type
 	$args = array(
 		'label'               => __( 'sondage'),
 		'description'         => __( 'Tous sur les Sondages'),
 		'labels'              => $labels,
 		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'revisions', 'custom-fields', ),
 		/* 
 		* Différentes options supplémentaires
 		*/
@@ -115,7 +115,7 @@ function wp_custom_post_type_sondages() {
 		'taxonomies'          => array( 'category' ),
 
 	);
-	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
+	// On enregistre notre custom post type
 	register_post_type( 'sondage', $args );
 
 }

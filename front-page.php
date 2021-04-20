@@ -68,7 +68,7 @@
               $the_query = new WP_Query( $args );
               $the_query = new WP_Query($args);
               while ($the_query->have_posts()) : $the_query->the_post(); ?>
-              <box-sondage link="<?php the_field( 'lien_du_sondage' ); ?>">
+              <box-sondage lien="<?php the_field( 'lien_du_sondage' ); ?> ">
               <?php the_title(); ?>
               </box-sondage>
                <?php endwhile; wp_reset_postdata();?>
