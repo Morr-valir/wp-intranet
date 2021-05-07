@@ -143,21 +143,21 @@ function wp_custom_post_type_mot() {
 	);
 	// On peut définir ici d'autres options pour notre custom post type
 	$args = array(
-		'label'               => __( 'mot_du_maire'),
-		'description'         => __( 'Tous sur les mots'),
-		'labels'              => $labels,
+		'label'               	=> __( 'mot_du_maire'),
+		'description'         	=> __( 'Tous sur les mots'),
+		'labels'              	=> $labels,
 		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'supports'            	=> array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
 		//Différentes options supplémentaires
-		'show_in_rest' => true,
-		'hierarchical'        => false,
-		'public'              => true,
-		'has_archive'         => true,
-		'rewrite'			  => array( 'slug' => 'mot'),
-		'capability_type'       => 'mot',
-        'menu_icon' => 'dashicons-welcome-write-blog',
-		'map_meta_cap'          => true,
-		'taxonomies'          => array( 'category' ),
+		'show_in_rest' 			=> true,
+		'hierarchical'        	=> false,
+		'public'              	=> true,
+		'has_archive'         	=> true,
+		'rewrite'			  	=> array( 'slug' => 'mot'),
+		'capability_type'     	=> 'mot',
+        'menu_icon' 			=> 'dashicons-welcome-write-blog',
+		'map_meta_cap'        	=> true,
+		'taxonomies'          	=> array( 'category' ),
 
 
 	);
