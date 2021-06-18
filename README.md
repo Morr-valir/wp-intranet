@@ -23,7 +23,7 @@ Modification des fichiers script et ajout de l'API Wordpress via axios
 <li>Ajout annuaire via vuejs & liste des app métier</li>
 </ul>
 
-# 18/06/21 - Projet mise en pause
+# 18/06/21 - Projet mis en pause
 
 <p>Le projet est mis en pause suite au evenement et suite à l'utilisateur de agora projet</p>
 
